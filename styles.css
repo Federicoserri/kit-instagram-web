@@ -1,0 +1,317 @@
+/* ============================================================
+   El Mercado del Barrio — Modern Premium Styles
+   ============================================================ */
+
+:root {
+  --gold: #D4A843;
+  --gold-light: #E8C870;
+  --dark: #180808;
+  --dark-card: #1e0c0c;
+  --dark-deep: #120606;
+  --cream: #F5E6C8;
+
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-pill: 9999px;
+
+  --shadow-card: 0 4px 32px rgba(0, 0, 0, 0.35);
+  --shadow-card-hover: 0 16px 48px rgba(212, 168, 67, 0.12), 0 8px 24px rgba(0, 0, 0, 0.4);
+  --shadow-gold: 0 0 32px rgba(212, 168, 67, 0.15);
+
+  --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Scroll behavior ── */
+html { scroll-behavior: smooth; }
+
+/* ── Base ── */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: var(--dark);
+  color: var(--cream);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* ── Gold divider line ── */
+.gold-line {
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+  height: 1px;
+}
+
+/* ── NAV ── */
+nav {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(212, 168, 67, 0.15);
+}
+
+nav img {
+  border-radius: var(--radius-pill);
+  transition: box-shadow var(--transition-base);
+}
+
+nav img:hover {
+  box-shadow: 0 0 0 3px rgba(212, 168, 67, 0.5);
+}
+
+.nav-cta {
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-base);
+}
+
+/* ── HERO ── */
+.hero-profile-ring {
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  box-shadow: var(--shadow-gold);
+  transition: box-shadow var(--transition-slow);
+}
+
+.hero-profile-ring:hover {
+  box-shadow: 0 0 48px rgba(212, 168, 67, 0.3);
+}
+
+.hero-badge {
+  border-radius: var(--radius-sm);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.hero-btn-primary {
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+  box-shadow: 0 4px 20px rgba(212, 168, 67, 0.2);
+}
+
+.hero-btn-primary:hover {
+  box-shadow: 0 8px 32px rgba(212, 168, 67, 0.35);
+  transform: translateY(-2px);
+}
+
+.hero-btn-outline {
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+}
+
+.hero-btn-outline:hover {
+  transform: translateY(-2px);
+}
+
+/* ── BADGES BAR ── */
+.badges-bar {
+  border-radius: 0;
+}
+
+.badge-item {
+  border-radius: var(--radius-pill);
+  padding: 6px 16px;
+  background: rgba(0, 0, 0, 0.1);
+  transition: background var(--transition-base);
+}
+
+.badge-item:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* ── PRODUCT CARDS ── */
+.product-card {
+  border-radius: var(--radius-lg) !important;
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base) !important;
+  border: 1px solid rgba(212, 168, 67, 0.15) !important;
+  overflow: hidden;
+}
+
+.product-card:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: var(--shadow-card-hover) !important;
+  border-color: rgba(212, 168, 67, 0.35) !important;
+}
+
+.product-card-wide {
+  border-radius: var(--radius-lg) !important;
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  border: 1px solid rgba(212, 168, 67, 0.15) !important;
+  transition: box-shadow var(--transition-base), border-color var(--transition-base) !important;
+}
+
+.product-card-wide:hover {
+  box-shadow: var(--shadow-card-hover) !important;
+  border-color: rgba(212, 168, 67, 0.3) !important;
+}
+
+.product-tag {
+  border-radius: var(--radius-pill) !important;
+  transition: background var(--transition-base), color var(--transition-base), border-color var(--transition-base) !important;
+}
+
+.product-tag:hover {
+  background: rgba(212, 168, 67, 0.1) !important;
+  border-color: rgba(212, 168, 67, 0.6) !important;
+  color: var(--gold) !important;
+}
+
+/* ── GALLERY ── */
+.gallery-item {
+  border-radius: var(--radius-lg) !important;
+  overflow: hidden !important;
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition-base), box-shadow var(--transition-base) !important;
+}
+
+.gallery-item:hover {
+  transform: scale(1.02) !important;
+  box-shadow: var(--shadow-card-hover) !important;
+}
+
+.gallery-item img {
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.08) !important;
+}
+
+.gallery-instagram-cell {
+  border-radius: var(--radius-lg) !important;
+  border: 1px solid rgba(212, 168, 67, 0.15) !important;
+  transition: border-color var(--transition-base), box-shadow var(--transition-base) !important;
+}
+
+.gallery-instagram-cell:hover {
+  border-color: rgba(212, 168, 67, 0.4) !important;
+  box-shadow: var(--shadow-gold) !important;
+}
+
+.gallery-instagram-cell img {
+  border-radius: var(--radius-pill) !important;
+  transition: box-shadow var(--transition-base) !important;
+}
+
+.gallery-instagram-cell:hover img {
+  box-shadow: 0 0 0 3px rgba(212, 168, 67, 0.5) !important;
+}
+
+/* ── DELIVERY CARDS ── */
+.delivery-card {
+  border-radius: var(--radius-lg) !important;
+  box-shadow: var(--shadow-card);
+  border: 1px solid rgba(212, 168, 67, 0.15) !important;
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base) !important;
+}
+
+.delivery-card:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: var(--shadow-card-hover) !important;
+  border-color: rgba(212, 168, 67, 0.35) !important;
+}
+
+/* ── CONTACT BUTTONS ── */
+.contact-btn-primary {
+  border-radius: var(--radius-md) !important;
+  transition: all var(--transition-base) !important;
+  box-shadow: 0 4px 20px rgba(212, 168, 67, 0.2) !important;
+}
+
+.contact-btn-primary:hover {
+  box-shadow: 0 8px 32px rgba(212, 168, 67, 0.4) !important;
+  transform: translateY(-2px) !important;
+}
+
+.contact-btn-outline {
+  border-radius: var(--radius-md) !important;
+  transition: all var(--transition-base) !important;
+}
+
+.contact-btn-outline:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 20px rgba(212, 168, 67, 0.15) !important;
+}
+
+/* ── LUCIDE ICONS ── */
+i[data-lucide] { display: inline-block; }
+.lucide-sm { width: 16px; height: 16px; stroke-width: 2; }
+.lucide-md { width: 32px; height: 32px; stroke-width: 1.5; }
+.lucide-lg { width: 44px; height: 44px; stroke-width: 1.5; }
+
+/* ── SECTION BACKGROUNDS ── */
+.section-deep {
+  background: var(--dark-deep);
+}
+
+/* ── ANIMATE: fade-up ── */
+.fade-up {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delays for grid children */
+.stagger-children > *:nth-child(1) { transition-delay: 0ms; }
+.stagger-children > *:nth-child(2) { transition-delay: 80ms; }
+.stagger-children > *:nth-child(3) { transition-delay: 160ms; }
+.stagger-children > *:nth-child(4) { transition-delay: 240ms; }
+.stagger-children > *:nth-child(5) { transition-delay: 320ms; }
+.stagger-children > *:nth-child(6) { transition-delay: 400ms; }
+
+/* Hero entrance animations */
+.hero-enter {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-enter.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-enter-delay-1 { transition-delay: 100ms; }
+.hero-enter-delay-2 { transition-delay: 220ms; }
+.hero-enter-delay-3 { transition-delay: 340ms; }
+.hero-enter-delay-4 { transition-delay: 460ms; }
+.hero-enter-delay-5 { transition-delay: 580ms; }
+
+/* ── Respect reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .fade-up,
+  .hero-enter {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .product-card:hover,
+  .delivery-card:hover,
+  .hero-btn-primary:hover,
+  .hero-btn-outline:hover,
+  .contact-btn-primary:hover,
+  .contact-btn-outline:hover {
+    transform: none;
+  }
+}
+
+/* ── Mobile optimizations ── */
+@media (max-width: 640px) {
+  .product-card { border-radius: var(--radius-md) !important; }
+  .gallery-item { border-radius: var(--radius-md) !important; }
+  .delivery-card { border-radius: var(--radius-md) !important; }
+}

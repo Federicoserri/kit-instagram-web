@@ -3,5 +3,7 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/fedeserri/test2.fedeserri.com/
     - /bin/cp index.html $DEPLOYPATH
+    - /bin/cp styles.css $DEPLOYPATH
+    - /bin/cp animations.js $DEPLOYPATH
     - /bin/cp -R assets $DEPLOYPATH
     - /bin/cp instagram-data.json $DEPLOYPATH
