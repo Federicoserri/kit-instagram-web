@@ -1,0 +1,36 @@
+name: Deploy to test2 cPanel
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+       - name: FTP Upload
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ftp.fedeserri.com
+          username: deploy-test2@test2.fedeserri.com
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
+          local-dir: ./
+          server-dir: ./
+          exclude: |
+            **/.git*
+            **/.github/**
+            **/node_modules/**
+            **/.claude/**
+            package.json
+            package-lock.json
+            CLAUDE.md
+            INSTRUCCIONES.md
+            index.zip
+            scrape-instagram.js

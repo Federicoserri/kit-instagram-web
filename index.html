@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El Mercado del Barrio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'brand-dark': '#180808',
+            'brand-brown': '#1e0c0c',
+            'brand-gold': '#D4A843',
+            'brand-gold-light': '#E8C870',
+            'brand-cream': '#F5E6C8',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Lato', sans-serif; background-color: #180808; }
+    h1, h2, h3, h4 { font-family: 'Playfair Display', Georgia, serif; }
+    .gold-line { background: linear-gradient(to right, transparent, #D4A843, transparent); height: 1px; }
+    .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(212,168,67,0.15); }
+    .img-zoom { overflow: hidden; }
+    .img-zoom img { transition: transform 0.5s ease; }
+    .img-zoom:hover img { transform: scale(1.06); }
+    html { scroll-behavior: smooth; }
+    i[data-lucide] { display: inline-block; }
+    .lucide-sm { width: 16px; height: 16px; stroke-width: 2; }
+    .lucide-md { width: 32px; height: 32px; stroke-width: 1.5; }
+    .lucide-lg { width: 44px; height: 44px; stroke-width: 1.5; }
+  </style>
+</head>
+<body class="text-[#F5E6C8]">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-[#180808]/95 backdrop-blur-sm border-b border-[#D4A843]/20">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <img src="assets/profile.jpg" alt="EMB" class="w-10 h-10 rounded-full object-cover ring-2 ring-[#D4A843]/50">
+        <div>
+          <div class="text-[#D4A843] font-bold text-sm tracking-widest uppercase leading-none">El Mercado</div>
+          <div class="text-[#D4A843]/50 text-xs tracking-wider">del Barrio</div>
+        </div>
+      </div>
+      <div class="hidden md:flex items-center gap-8 text-xs tracking-widest uppercase text-[#F5E6C8]/60">
+        <a href="#productos" class="hover:text-[#D4A843] transition-colors">Productos</a>
+        <a href="#galeria" class="hover:text-[#D4A843] transition-colors">Galería</a>
+        <a href="#delivery" class="hover:text-[#D4A843] transition-colors">Delivery</a>
+        <a href="#contacto" class="hover:text-[#D4A843] transition-colors">Contacto</a>
+      </div>
+      <a href="#contacto" class="border border-[#D4A843] text-[#D4A843] text-xs tracking-widest uppercase px-5 py-2 hover:bg-[#D4A843] hover:text-[#180808] transition-all">
+        Pedir
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="min-h-screen flex items-center justify-center pt-24 pb-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+
+      <div class="mb-10 flex justify-center">
+        <div class="relative">
+          <div class="w-36 h-36 md:w-44 md:h-44 rounded-full overflow-hidden ring-4 ring-[#D4A843]/60 ring-offset-4 ring-offset-[#180808]">
+            <img src="assets/profile.jpg" alt="El Mercado del Barrio" class="w-full h-full object-cover">
+          </div>
+          <div class="absolute -bottom-1 -right-1 bg-[#D4A843] text-[#180808] text-xs font-bold px-2 py-0.5 tracking-wider">
+            ✨ Premium
+          </div>
+        </div>
+      </div>
+
+      <div class="text-[#D4A843]/60 text-xs tracking-[0.5em] uppercase mb-3">Gastronomía Premium</div>
+      <h1 class="text-6xl md:text-8xl font-bold text-[#D4A843] leading-none mb-2">El Mercado</h1>
+      <h2 class="text-xl md:text-3xl text-[#F5E6C8]/60 tracking-[0.4em] uppercase mb-8">del Barrio</h2>
+
+      <div class="gold-line max-w-sm mx-auto mb-8"></div>
+
+      <p class="text-[#F5E6C8]/75 text-base md:text-lg max-w-xl mx-auto leading-relaxed mb-10">
+        Solo alta calidad ✨ &nbsp;·&nbsp; Gastronomía sin concesiones &nbsp;·&nbsp; Experiencia premium 🍷
+      </p>
+
+      <div class="flex items-center justify-center gap-10 mb-12">
+        <div class="text-center">
+          <div class="text-3xl font-bold text-[#D4A843]">15</div>
+          <div class="text-[#F5E6C8]/40 text-xs tracking-widest uppercase mt-0.5">Publicaciones</div>
+        </div>
+        <div class="w-px h-10 bg-[#D4A843]/25"></div>
+        <div class="text-center">
+          <div class="text-3xl font-bold text-[#D4A843]">100%</div>
+          <div class="text-[#F5E6C8]/40 text-xs tracking-widest uppercase mt-0.5">Casero</div>
+        </div>
+        <div class="w-px h-10 bg-[#D4A843]/25"></div>
+        <div class="text-center">
+          <div class="text-3xl font-bold text-[#D4A843]">Diario</div>
+          <div class="text-[#F5E6C8]/40 text-xs tracking-widest uppercase mt-0.5">Producción</div>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#productos" class="bg-[#D4A843] text-[#180808] font-bold text-sm tracking-widest uppercase px-10 py-4 hover:bg-[#E8C870] transition-colors">
+          Ver Productos
+        </a>
+        <a href="#contacto" class="border border-[#D4A843]/50 text-[#D4A843] text-sm tracking-widest uppercase px-10 py-4 hover:border-[#D4A843] transition-colors">
+          Hacer Pedido
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BADGES BAR -->
+  <div class="bg-[#D4A843] py-4">
+    <div class="max-w-5xl mx-auto px-6 flex flex-wrap items-center justify-center gap-8 md:gap-14">
+      <span class="text-[#180808] text-xs font-bold tracking-widest uppercase flex items-center gap-2"><i data-lucide="clock" class="lucide-sm"></i> Producción Diaria</span>
+      <span class="text-[#180808] text-xs font-bold tracking-widest uppercase flex items-center gap-2"><i data-lucide="snowflake" class="lucide-sm"></i> Congelados Premium</span>
+      <span class="text-[#180808] text-xs font-bold tracking-widest uppercase flex items-center gap-2"><i data-lucide="truck" class="lucide-sm"></i> Envíos Zona Norte</span>
+      <span class="text-[#180808] text-xs font-bold tracking-widest uppercase flex items-center gap-2"><i data-lucide="star" class="lucide-sm"></i> Stock Limitado</span>
+    </div>
+  </div>
+
+  <!-- PRODUCTOS -->
+  <section id="productos" class="py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+
+      <div class="text-center mb-16">
+        <div class="text-[#D4A843]/60 text-xs tracking-[0.4em] uppercase mb-3">Nuestra Selección</div>
+        <h2 class="text-5xl text-[#D4A843]">Productos</h2>
+        <div class="gold-line max-w-xs mx-auto mt-6"></div>
+      </div>
+
+      <!-- Pescados & Mariscos -->
+      <div class="mb-20">
+        <div class="flex items-center gap-6 mb-10">
+          <div class="gold-line flex-1"></div>
+          <h3 class="text-xl text-[#D4A843] tracking-wider uppercase px-4">Pescados & Mariscos</h3>
+          <div class="gold-line flex-1"></div>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+          <div class="bg-[#1e0c0c] border border-[#D4A843]/20 p-6 text-center card-hover">
+            <div class="flex justify-center mb-3 text-[#D4A843]"><i data-lucide="fish" class="lucide-md"></i></div>
+            <div class="text-[#D4A843] font-bold text-sm tracking-wider uppercase mb-1">Salmón</div>
+            <div class="text-[#F5E6C8]/40 text-xs">Fresco · Máxima calidad</div>
+          </div>
+          <div class="bg-[#1e0c0c] border border-[#D4A843]/20 p-6 text-center card-hover">
+            <div class="flex justify-center mb-3 text-[#D4A843]"><i data-lucide="waves" class="lucide-md"></i></div>
+            <div class="text-[#D4A843] font-bold text-sm tracking-wider uppercase mb-1">Trucha</div>
+            <div class="text-[#F5E6C8]/40 text-xs">Selección premium</div>
+          </div>
+          <div class="bg-[#1e0c0c] border border-[#D4A843]/20 p-6 text-center card-hover">
+            <div class="flex justify-center mb-3 text-[#D4A843]"><i data-lucide="shell" class="lucide-md"></i></div>
+            <div class="text-[#D4A843] font-bold text-sm tracking-wider uppercase mb-1">Mariscos</div>
+            <div class="text-[#F5E6C8]/40 text-xs">Variedad del mar</div>
+          </div>
+          <div class="bg-[#1e0c0c] border border-[#D4A843]/20 p-6 text-center card-hover">
+            <div class="flex justify-center mb-3 text-[#D4A843]"><i data-lucide="circle-dot" class="lucide-md"></i></div>
+            <div class="text-[#D4A843] font-bold text-sm tracking-wider uppercase mb-1">Pulpo</div>
+            <div class="text-[#F5E6C8]/40 text-xs">Calidad superior</div>
+          </div>
+          <div class="bg-[#1e0c0c] border border-[#D4A843]/20 p-6 text-center card-hover col-span-2 sm:col-span-1">
+            <div class="flex justify-center mb-3 text-[#D4A843]"><i data-lucide="fish" class="lucide-md"></i></div>
+            <div class="text-[#D4A843] font-bold text-sm tracking-wider uppercase mb-1">Lomo de Atún</div>
+            <div class="text-[#F5E6C8]/40 text-xs">Corte selecto</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Caseros Congelados -->
+      <div>
+        <div class="flex items-center gap-6 mb-10">
+          <div class="gold-line flex-1"></div>
+          <h3 class="text-xl text-[#D4A843] tracking-wider uppercase px-4 text-center">Caseros Congelados</h3>
+          <div class="gold-line flex-1"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+          <!-- Empanadas -->
+          <div class="bg-[#1e0c0c] border border-[#D4A843]/20 p-8 flex items-center gap-6 card-hover">
+            <div class="text-[#D4A843] flex-shrink-0"><i data-lucide="wheat" class="lucide-lg"></i></div>
+            <div>
+              <h4 class="text-[#D4A843] text-xl mb-1">Empanadas</h4>
+              <p class="text-[#F5E6C8]/55 text-sm">Elaboración 100% artesanal · Producción diaria</p>
+            </div>
+          </div>
+
+          <!-- Milanesas -->
+          <div class="bg-[#1e0c0c] border border-[#D4A843]/20 p-8 flex items-center gap-6 card-hover">
+            <div class="text-[#D4A843] flex-shrink-0"><i data-lucide="chef-hat" class="lucide-lg"></i></div>
+            <div>
+              <h4 class="text-[#D4A843] text-xl mb-1">Milanesas</h4>
+              <p class="text-[#F5E6C8]/55 text-sm">Caseras, listas para cocinar</p>
+            </div>
+          </div>
+
+          <!-- Tartas -->
+          <div class="bg-[#1e0c0c] border border-[#D4A843]/20 overflow-hidden card-hover md:col-span-2">
+            <div class="flex flex-col md:flex-row">
+              <div class="md:w-72 img-zoom flex-shrink-0">
+                <img src="assets/post_5.jpg" alt="Tartas" class="w-full h-52 md:h-full object-cover">
+              </div>
+              <div class="p-8 flex flex-col justify-center">
+                <h4 class="text-[#D4A843] text-2xl mb-2">Tartas Gourmet</h4>
+                <p class="text-[#F5E6C8]/55 text-sm mb-5">Recetas caseras de la más alta calidad. Rellenos artesanales, masa hecha en casa.</p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="border border-[#D4A843]/35 text-[#D4A843]/75 text-xs px-3 py-1 tracking-wider">Espinaca</span>
+                  <span class="border border-[#D4A843]/35 text-[#D4A843]/75 text-xs px-3 py-1 tracking-wider">Jamón & Queso</span>
+                  <span class="border border-[#D4A843]/35 text-[#D4A843]/75 text-xs px-3 py-1 tracking-wider">Pollo</span>
+                  <span class="border border-[#D4A843]/35 text-[#D4A843]/75 text-xs px-3 py-1 tracking-wider">Calabaza</span>
+                  <span class="border border-[#D4A843]/35 text-[#D4A843]/75 text-xs px-3 py-1 tracking-wider">Caprese</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Papillotes -->
+          <div class="bg-[#1e0c0c] border border-[#D4A843]/20 overflow-hidden card-hover md:col-span-2">
+            <div class="flex flex-col md:flex-row-reverse">
+              <div class="md:w-72 img-zoom flex-shrink-0">
+                <img src="assets/post_9.jpg" alt="Salmón y Trucha" class="w-full h-52 md:h-full object-cover">
+              </div>
+              <div class="p-8 flex flex-col justify-center">
+                <h4 class="text-[#D4A843] text-2xl mb-2">Papillotes</h4>
+                <p class="text-[#F5E6C8]/55 text-sm mb-5">La forma perfecta de cocinar el pescado — fácil, sabroso y sin ensuciar. Solo al horno y listo.</p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="border border-[#D4A843]/35 text-[#D4A843]/75 text-xs px-3 py-1 tracking-wider">Salmón</span>
+                  <span class="border border-[#D4A843]/35 text-[#D4A843]/75 text-xs px-3 py-1 tracking-wider">Trucha</span>
+                  <span class="border border-[#D4A843]/35 text-[#D4A843]/75 text-xs px-3 py-1 tracking-wider">Merluza</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section id="galeria" class="py-24 px-6 bg-[#120606]">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <div class="text-[#D4A843]/60 text-xs tracking-[0.4em] uppercase mb-3">Nuestros Productos</div>
+        <h2 class="text-5xl text-[#D4A843]">Galería</h2>
+        <div class="gold-line max-w-xs mx-auto mt-6 mb-4"></div>
+        <a href="https://www.instagram.com/elmercadotest" target="_blank" class="text-[#D4A843]/50 text-xs tracking-widest uppercase hover:text-[#D4A843] transition-colors">
+          @elmercadotest
+        </a>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-3">
+        <div class="img-zoom aspect-square overflow-hidden">
+          <img src="assets/post_5.jpg" alt="Tartas variadas" class="w-full h-full object-cover">
+        </div>
+        <div class="img-zoom aspect-square overflow-hidden">
+          <img src="assets/post_6.jpg" alt="Tarta jamón queso" class="w-full h-full object-cover">
+        </div>
+        <div class="img-zoom aspect-square overflow-hidden">
+          <img src="assets/post_7.jpg" alt="Tarta espinaca" class="w-full h-full object-cover">
+        </div>
+        <div class="img-zoom aspect-square overflow-hidden">
+          <img src="assets/post_8.jpg" alt="Tarta caprese" class="w-full h-full object-cover">
+        </div>
+        <div class="img-zoom aspect-square overflow-hidden">
+          <img src="assets/post_9.jpg" alt="Salmón y Trucha" class="w-full h-full object-cover">
+        </div>
+        <div class="img-zoom aspect-square overflow-hidden bg-[#1e0c0c] border border-[#D4A843]/20 flex items-center justify-center">
+          <a href="https://www.instagram.com/elmercadotest" target="_blank" class="text-center group">
+            <img src="assets/profile.jpg" alt="EMB" class="w-20 h-20 rounded-full mx-auto mb-3 object-cover ring-2 ring-[#D4A843]/40 group-hover:ring-[#D4A843] transition-all">
+            <div class="text-[#D4A843]/60 text-xs tracking-widest uppercase group-hover:text-[#D4A843] transition-colors">Ver más en</div>
+            <div class="text-[#D4A843] font-bold text-sm tracking-widest">Instagram</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DELIVERY -->
+  <section id="delivery" class="py-24 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-16">
+        <div class="text-[#D4A843]/60 text-xs tracking-[0.4em] uppercase mb-3">Llegamos a tu puerta</div>
+        <h2 class="text-5xl text-[#D4A843]">Delivery</h2>
+        <div class="gold-line max-w-xs mx-auto mt-6"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="text-center p-10 border border-[#D4A843]/20 bg-[#1e0c0c] card-hover">
+          <div class="flex justify-center mb-5 text-[#D4A843]"><i data-lucide="truck" class="lucide-lg"></i></div>
+          <h4 class="text-[#D4A843] text-lg mb-3">Envíos Zona Norte</h4>
+          <p class="text-[#F5E6C8]/55 text-sm leading-relaxed">Delivery en toda la Zona Norte. Consultanos por tu zona específica.</p>
+        </div>
+        <div class="text-center p-10 border border-[#D4A843]/20 bg-[#1e0c0c] card-hover">
+          <div class="flex justify-center mb-5 text-[#D4A843]"><i data-lucide="clock" class="lucide-lg"></i></div>
+          <h4 class="text-[#D4A843] text-lg mb-3">Producción Diaria</h4>
+          <p class="text-[#F5E6C8]/55 text-sm leading-relaxed">Todo se elabora fresco cada día. Stock semanal limitado — pedí con anticipación.</p>
+        </div>
+        <div class="text-center p-10 border border-[#D4A843]/20 bg-[#1e0c0c] card-hover">
+          <div class="flex justify-center mb-5 text-[#D4A843]"><i data-lucide="snowflake" class="lucide-lg"></i></div>
+          <h4 class="text-[#D4A843] text-lg mb-3">Congelados Premium</h4>
+          <p class="text-[#F5E6C8]/55 text-sm leading-relaxed">Los productos llegan congelados, listos para que los prepares cuando quieras.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="py-24 px-6 bg-[#120606]">
+    <div class="max-w-2xl mx-auto text-center">
+      <div class="text-[#D4A843]/60 text-xs tracking-[0.4em] uppercase mb-3">Escribinos</div>
+      <h2 class="text-5xl text-[#D4A843] mb-6">Hacer Pedido</h2>
+      <div class="gold-line max-w-xs mx-auto mb-10"></div>
+
+      <p class="text-[#F5E6C8]/65 text-lg mb-12 leading-relaxed">
+        El stock es semanal y limitado.<br>
+        Escribinos para consultar disponibilidad y hacer tu pedido.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+        <a href="https://www.instagram.com/elmercadotest" target="_blank"
+           class="bg-[#D4A843] text-[#180808] font-bold text-sm tracking-widest uppercase px-10 py-4 hover:bg-[#E8C870] transition-colors flex items-center justify-center gap-3">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+          Instagram
+        </a>
+        <a href="mailto:federicoserri1@gmail.com"
+           class="border border-[#D4A843] text-[#D4A843] text-sm tracking-widest uppercase px-10 py-4 hover:bg-[#D4A843] hover:text-[#180808] transition-all flex items-center justify-center gap-3">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+          </svg>
+          Email
+        </a>
+      </div>
+
+      <div class="gold-line mb-6"></div>
+      <div class="text-[#F5E6C8]/25 text-xs tracking-widest">
+        © 2024 El Mercado del Barrio &nbsp;·&nbsp; @elmercadotest
+      </div>
+    </div>
+  </section>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
